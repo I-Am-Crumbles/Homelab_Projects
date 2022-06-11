@@ -1,0 +1,56 @@
+Objective1: 
+
+Put Kali Linux on a 13 year old Windows 7 laptop from 2009 that is end of life.
+Step one: Make a Kali Linux bootable USB drive. 
+This is fairly easy, I just went to kali.org and downloaded the latest  version of kali. I then went to poweriso.com and downloaded the latest 64 bit version of that program, installed, and ran it as administrator. From the PowerISO program window I selected Tools > Create Bootable USB drive. From the new window that pops up I selected the kali linux download file from earlier as the Image file, selected my 15gig usb drive as the Destination USB and clicked start. It takes a few minutes but once it is finished you have a kali linux bootable USB drive.
+Step Two: Install The bootable USB drive onto the hard drive of the Windows 7 laptop
+On start up we see that you can press f2 for set-up or f12 for boot options. While the very first screen is loading I began to press f12 repeatedly until the boot options menu displayed. From there I used the Arrow keys to navigate over to the BIOS menu and select the USB I have inserted with Kali Linux on it to be booted first. From there I save and the system restarts. This time it boots up the Kali linux installation menu. Some basic set up questions are asked here. When we are prompted to select a partition we are warned that all data related to the one we select will be deleted. Verify that that is ok and set up continues only prompting basic installation questions as it goes. Once the installation is complete the system will reboot a final time and you will load into the Kali Linux OS login menu.
+Meaning the revival of this old laptop was a success.
+
+Objective 2.
+ Create an ad-hoc wifi network on the repurposed windows 7 machine (now running kali linux) then connected to it on a nexus 7 tablet device also running kali linux (neat little purchase I found on ebay for around $35)
+1.	open the command line on both devices and enter the following command on both "iwconfig wlan0 mode ad-hoc essid "Namehere" enc off channel 1" you can then confirm this command worked by entering iwconfig to check that the name you entered for the network is displayed next to wlan0.
+2.	Now we need to assign the network address you will need to set different IP addresses for each device.  On the Kali LInux laptop we will enter "ifconfig wlan0 10.0.0.1 netmask 255.255.255.0"
+3.	Now we test the connection by entering the ping command into the tablet (device 10.0.0.2) and sending it to the kali linux device
+"ping 10.0.0.1". 
+# For me the network was able to transmit 42 packets before it crashed. I was unable to establish an ad-hoc connection with the same current settings after this. Was still a fun test to see if I could get this old equipment to do something.
+
+Objective 3: 
+Install Linux Mint onto an old Chrome book that I don't really know anything about.
+Step One. I need to repeat the steps above I used to create a Kali Linux USB boot drive, except this time I'm going to use Mint.
+Step Two: I need to make the chrome book usb bootable. To do this will take several steps
+1.	press "Esc" "Refresh" and "Power" keys at the same time. This will signal the chromebook into recovery mode
+2.	The next screen will look like some kind of error screen, this can be ignored and you will want to press CTRL + D
+3.	This will turn off the "verified boot" feature of the chromebook. It should restart automatically after the process has been completed
+4.	There should now be an option that says "to turn OS verification OFF press ENTER, the system should restart and specify that OS verification is OFF, enter ctrl + D again
+5.	The device transitions to developer mode, the data is also being erased from the storage device. 
+6.	After the device finishes input ctrl + D one last time and the chrome book will restart and load the welcome screen.
+7.	ONe the welcome screen you go through the initial chrome OS setup, however you will have an option called "Enable Debugging features' ' click on it and follow the onscreen instructions seen, then click enable to finalize the process.
+8.	You will now need to Enable USB boot from the "crash" shell., first you need to open the chrome browser and press ctrl + alt + T, this will open up the chrome OS developer shell called "Crash"
+9.	within crash we enter "shell", this command will allow chrome OS developer shell to accept linux-oriented commands
+10.	Now we will need to ctrl + alt + -> and login as root (password was set in the earlier initial setup menus) once logged in enter the following command "chromeos-setdevpasswd" and you will be prompted to set the password.
+11.	Now we exit the developer terminal and head back to the browser terminal where we enter the command "sudo bash", and enter the sudo password we just set for the chronos user in step 10.
+12.	The final step is to enter "sudo enable_dev_usb_boot" in the command line.
+13.	We should now be able to restart the chrome book, and enter recovery mode again by pressing esc + refresh + power together. We should now be prompted to insert the USB drive which the chrome book will now boot from.
+
+# This did not actually work for me, for some reason the check to see if it was a chrome OS was still enabled on my initial attempt. I tried to repeat the process however the initial boot into recovery mode and pressing CTRL + D prompts no response from the system. After trouble shooting some I've learned I may need a USB bootable version of chrome OS to put on it, however the device is end of life so this may be difficult to actually obtain. May return at a later date after this has been researched more.
+
+**UPDATE** 
+	In the end I decided it wasn't really worth my time to do continued projects with the chromebook so I will most likely be destroying it in the near future.
+
+Objective 4: 
+	Update an old Windows 8 lenovo laptop to windows 11. Basically going to follow the same format as the previous devices: Download a windows 11 iso and create a windows 11 bootable USB drive using PowerISO. I'll then reboot the Lenovo with the USB in it, navigate over to the BIOS settings and then set USB to the number 1 boot option and tell it to save and restart. Lol, the hardware couldn't handle windows 11. So we will try Windows 10 instead.  Windows 10 installed successfully on the older idea pad. Which was to be expected. Some work had to be done in the BIOS settings to enable virtualization. While the system itself doesn't have much ram I was able to get it to virtualize. I will come up with a use for it at some point I'm sure.
+
+Objective 5: 
+	reformat and update an old gaming PC from 2012. This will serve as the main host machine for my virtual lab. It was currently working, which was a bit of a relief as it had been sitting in an attic for a year and it was running Windows 10, however most of the hard drive was filled up with 9 years of video games and other garbage. So I did a complete reformatting of it and added a fresh install of windows 10 home edition. This was pretty straight forward, I simply used a Windows 10 bootable USB drive and when it was time to select which partition to install it on I chose to reformat the one containing a 2 terabyte harddrive. From there I continued along with the installation like normal. I had to restart and enter the Boot Setup menu one more time to enable virtualization on the CPU but this was pretty straight forward.
+⦁	Restart the machine, as you enter the initial boot screen press F2 to enter the settings menu. 
+⦁	From there use the arrow keys to navigate over to Advanced Mode (F7 may also be pressed)
+⦁	From there we navigate over to Advanced and select CPU configuration and press enter
+⦁	In this menu we can arrow key down to an option labeled "Intel Virtualization Technology" if it is currently set to "disabled" press enter to "enable" it. You may or may not get a confirmation message.
+⦁	Press F10 to Save and ESC twice to exit 
+⦁	This should restart the system and cause it to boot like normal. Except now when you login and attempt to start a virtual machine on the system it should work.
+
+With that all of the old equipment I had laying around was either repurposed to be useful in my home lab setting, or completely retired.
+
+Google Docs link:
+                 https://docs.google.com/document/d/1Mlc9orUlJ2HZ6qe32UEBZwTQORM8-r_KqV9gKab8KWw/edit?usp=sharing
