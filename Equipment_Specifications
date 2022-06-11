@@ -1,0 +1,67 @@
+Physical Devices
+
+Device 1:
+        HP Laptop
+        Processor: Intel(R)Core(TM) i7-1065G7 @ 1.30GHz 
+        RAM: 32GB
+        BasedBoard: HP 86c9
+        GPU: Intel Iris Plus Graphics
+        OS: Windows 10 home
+        System Type: x64-Based PC
+
+Device 1 is the main machine I use for everyday web browsing, studying cyber security and work related projects. Currently
+
+Device 2: 
+        Custom Built Gaming PC turned virtual machine host
+        Processor: Intel(R) Core(TM) i7-4470k @ 3.50GHz
+        RAM: 16GB DDR3
+        BaseBoard: ASUS Z87-k
+        GPU: GeForce GTX 770
+        OS: Windows 10 Home
+        System Type: x64-Based PC
+        
+Device 2 is currently used to host virtual machines. At the moment it hosts 1 attack machine and whatever vulnerable box I am working through. 
+Overall this device serves as a more Sandbox environment for me to work in that, if need be, can easily be wiped and restored with out losing too much data in the process
+
+Device 3:
+        Lenovo Ideapad P400 Touch
+        Processor: Intel(R) Core(TM) i5-3230M @2.60GHz
+        RAM: 6.0 GB
+        BaseBoard: Lenovo ??? (listed as invalid)
+        GPU:Intel HD graphics 4000
+        OS: Windows 10 HOME
+        System Type x64-Based PC
+
+Device 3 currently doesn't have much of a use that I have come up with for it. I may put some obscure version of linux on it just to play around with. 
+May not hurt to just have an extra device to plug into the home lab network One day so I'll be keeping it around for now.
+
+Device4:
+        ASUS Nexus 7 Tablet
+        Processor: Nvidia-Tegra3 @ 1.2Ghz 
+        RAM: 2gg
+        BaseBoard: ASUS NEXUS 7 1ST GEN 7" ME370TG
+        GPU: Doubt it has one
+        OS: Android 6.01
+        System Type: 
+        
+Device 4 really has no purpose, or use. It's really just something I picked up for cheap because I had never seen kali run on a table and I thought it was a cool idea. 
+Again it never really hurts to keep an extra device or two around to connect to your home lab network
+
+Device 5:
+        ASUS RT-AX58U Dual band wifi router
+        
+Pretty self explanitory but this is the router I use to connect my homelab to the internet.
+
+Retired Devices
+
+R-dev 1:
+        Dell laptop 
+        Processor: Intel(R) Core(TM) i7-2630QM @ 2.00GHz
+        RAM: 6 GB DDR3
+        BaseBoard: ??
+        GPU: NVIDIA GeForce GT
+        OS: Kali Linux 
+        System Type: x64 Based PC
+        
+overall not a bad device I suppose, just old and slow. Not really sure what I'd do with it though
+
